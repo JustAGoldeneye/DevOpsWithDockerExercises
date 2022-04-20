@@ -1,1 +1,1 @@
-# Dev Ops With Docker: Exercises
+# DevOps with Docker: Exercises

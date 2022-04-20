@@ -1,0 +1,15 @@
+$ sudo docker pull devopsdockeruh/simple-web-service:ubuntu
+$ sudo docker pull devopsdockeruh/simple-web-service:alpine
+
+Image sizes:
+Ubuntu 83MB
+Alpine 15.7MB
+
+$ sudo docker run -d -it --name alpine devopsdockeruh/simple-web-service:alpine
+$ sudo docker attach alpine
+^c
+// The log message keeps getting printed.
+$ sudo docker start apline
+$ sudo docker exec -it alpine sh
+cat text.log
+// The log file seems correct.
