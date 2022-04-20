@@ -1,0 +1,16 @@
+Creating and fixing the container:
+
+$ sudo docker run -d -it --name ubu ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+$ sudo docker exec -it ubu bash
+apt-get update
+apt-get install curl
+exit
+$ sudo docker attach ubu
+helsinki.fi
+
+
+Using the existing container after fixing it:
+
+$ sudo docker start ubu
+$ sudo docker attach ubu
+helsinki.fi
