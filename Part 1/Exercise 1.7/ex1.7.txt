@@ -1,0 +1,7 @@
+Create the container:
+
+$ sudo docker build . -t devopsdockeruh/simple-web-service:web-server
+
+Run the container:
+
+$ sudo docker run devopsdockeruh/simple-web-service:web-server
