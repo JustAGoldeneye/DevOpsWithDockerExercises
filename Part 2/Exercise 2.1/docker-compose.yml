@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     simple-web-service-ex:
-      image: justagoldeneye/simple-web-service
+      image: simple-web-service
       build: .
       volumes:
         - ./text.log:/usr/src/app/text.log
