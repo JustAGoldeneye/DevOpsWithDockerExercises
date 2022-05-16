@@ -1,0 +1,4 @@
+Changed "ENV REACT_APP_BACKEND_URL=http://localhost:8080" in "example-frontend/Dockerfile" to "ENV REACT_APP_BACKEND_URL=http://localhost/api/".
+
+I changed the example-frontend to get the address for example-backend through the /api/ reverse proxy.
+It also was necessary to run "sudo docker-compose down --rmi all" before running "sudo docker-compose up" again
