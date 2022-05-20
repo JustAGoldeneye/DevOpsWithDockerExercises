@@ -6,7 +6,6 @@ dc_user=`cat ./dc_user.txt`
 dc_password=`cat ./dc_password.txt` 
 dc_repo=`cat ./dc_repo.txt`
 
-echo https://github.com/$gh_owner/$gh_repo.git
 git clone https://github.com/$gh_owner/$gh_repo.git
 cd $gh_repo
 docker login --username=$dc_user --password=$dc_password
