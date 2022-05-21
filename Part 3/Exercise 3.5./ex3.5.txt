@@ -1,0 +1,9 @@
+Image sizes:
+
+At the start:
+example-backend 1.07 GB
+example-frontend 1.23 GB
+
+At the end:
+example-backend 447 MB
+example-frontend 436 MB

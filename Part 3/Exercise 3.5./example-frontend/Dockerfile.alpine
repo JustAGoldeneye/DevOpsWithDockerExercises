@@ -1,0 +1,16 @@
+FROM node:16.14-alpine
+
+WORKDIR /usr/src/
+
+ENV REACT_APP_BACKEND_URL=http://localhost/api/
+
+COPY . .
+
+RUN npm install react-scripts && \
+    npm install -g serve && \
+    npm run build && \
+    addgroup -S appgroup && adduser -S appuser -G appgroup
+
+USER appuser
+
+CMD ["serve", "-s", "-l", "5000", "build"]
