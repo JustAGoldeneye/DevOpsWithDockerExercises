@@ -8,6 +8,8 @@ These optimizations are explained below and there are comments in the dockerfile
 The dockerfile is the backend dockerfile from the Kurkkumopo example project.
 The original dockerfile is named Dockerfile.slim and the new one just Dockerfile.
 docker-compose.yml (unchannged from the exericise 2.7) is also included.
+Dockerfile.slim build size: 2.63 GB
+Dockerfile build size: ??
 
 The changes made:
 python:3.6.7-slim was changed to python:3.6.7-alpine to reduce size.
