@@ -1,0 +1,22 @@
+I was not able to get the optimized dockerfile to work as it seemed to constantly run into new issues with all of the dependencies in it.
+I fixed many of the issues, but as my internet connection was slow it took too much time, so I had to stop at some point.
+The current issue should be with PIP no being able to find tensorflow.
+I tried to fix it by using python:3.7-alpine instead, but it seemed to recreate the lapack problem I previously had.
+I think I still made the optimizations relevant for the exercise.
+These optimizations are explained below and there are comments in the dockerfiles.
+
+The dockerfile is the backend dockerfile from the Kurkkumopo example project.
+The original dockerfile is named Dockerfile.slim and the new one just Dockerfile.
+docker-compose.yml (unchannged from the exericise 2.7) is also included.
+
+The changes made:
+python:3.6.7-slim was changed to python:3.6.7-alpine to reduce size.
+The copy instructions were combined to allow combining all of the run instructions to one.
+The run instructions were combined into one to reduce size.
+apt-get was replaced with apk to make the dockerfile compitable with alpine.
+--no-cache flage was used with apk add to avoid saving the source lists.
+Installs for musl-dev, linux-headers, and g++ were added to prevent an error while installing numpy.
+Install for lapack-dev was added to prevent an error with installing scipy.
+requirements.txt was set be removed after use.
+A new user, userapp was added to avoid the container unneccessary rights to improve security.
+the Alpine version of the command was used to make it compitable with Alpine.

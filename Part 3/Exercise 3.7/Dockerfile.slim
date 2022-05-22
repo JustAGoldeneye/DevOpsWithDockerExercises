@@ -1,0 +1,18 @@
+FROM python:3.6.7-slim
+
+WORKDIR /src
+RUN apt-get update
+# Gets apt-get source lists
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+# Installs ffmpeg, libsm6, and libxext6
+COPY ./requirements.txt ./requirements.txt
+# Imports a file with dependencies to be installed with PIP
+
+RUN pip install --upgrade pip
+# Updates PIP
+
+RUN pip install -r requirements.txt
+# Installs the rest of the dependencies with PIP
+COPY . .
+# Copies the rest of the files from the directory on the actual machine.
+CMD ["python", "-u", "app.py"]
